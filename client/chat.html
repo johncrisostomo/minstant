@@ -1,0 +1,33 @@
+<template name="chat_page">
+	<h2>Type in the box below to send a message!</h2>
+	<div class="row">
+		<div class="col-md-12">
+			<div class="well well-lg">
+			{{#each messages}}
+			  {{> chat_message}}
+			{{/each}}
+			</div>
+		</div>
+	</div>
+    <div class="row">
+		<div class="col-md-12">
+			<form class="js-send-chat">
+			<input class="input" type="text" name="chat" placeholder="type a message here...">
+			<button class="btn btn-default">send</button>
+		</form>
+		</div>
+	</div>
+</template>
+
+<template name="chat_message">
+  <div class="chat-bubble clearfix">
+    {{#if ownMessage}}
+     <img class="chat-avatar-right pull-right" src="/{{avatar}}" alt="user avatar" />
+     <h2 class="chat-messages"><span class="label label-default pull-right">{{text}}</span></h2>
+    {{else}}
+     <img class="chat-avatar" src="/{{avatar}}" alt="user avatar" />
+     <h2 class="chat-messages"><span class="label label-info">{{text}}</span></h2>
+    {{/if}}
+  </div>
+
+</template>
