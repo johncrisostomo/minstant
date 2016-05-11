@@ -1,5 +1,5 @@
 <template name="chat_page">
-	<h2>Type in the box below to send a message!</h2>
+	<h2>Type in the box below to send a message! Emojis are supported: try :) or :S and others!</h2>
 	<div class="row">
 		<div class="col-md-12">
 			<div class="well well-lg">
@@ -23,10 +23,10 @@
   <div class="chat-bubble clearfix">
     {{#if ownMessage}}
      <img class="chat-avatar-right pull-right" src="/{{avatar}}" alt="user avatar" />
-     <h2 class="chat-messages"><span class="label label-default pull-right">{{text}}</span></h2>
+     <h2 class="chat-messages"><span class="label label-default pull-right">{{#emoji}}{{text}}{{/emoji}}</span></h2>
     {{else}}
      <img class="chat-avatar" src="/{{avatar}}" alt="user avatar" />
-     <h2 class="chat-messages"><span class="label label-info">{{text}}</span></h2>
+     <h2 class="chat-messages"><span class="label label-info">{{#emoji}}{{text}}{{/emoji}}</span></h2>
     {{/if}}
   </div>
 
