@@ -29,7 +29,7 @@
         userid:Meteor.userId()});
       event.target.chat.value = "";
       chat.messages = msgs;
-      Chats.update(chat._id, chat);
+      Meteor.call('updateChat', chat);
     }
   }
 });
