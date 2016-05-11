@@ -1,7 +1,7 @@
   Template.chat_page.helpers({
     messages:function(){
       var chat = Chats.findOne({_id:Session.get("chatId")});
-      if (chat.messages) {
+      if (chat) {
         return chat.messages;
       } else {
         return;
